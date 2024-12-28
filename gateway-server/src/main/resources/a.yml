@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: lb://CUSTOMER
+          predicates:
+            - Path=/customers/**
+        - id: r2
+          uri: lb://PRODUIT
+          predicates:
+            - Path=/produits/**
+#hedha kif bech t5adim gateway de mainier statique sinon zid fi main methode bech ye5dim dinamik
+#ken t7ib traja3 statique badi ism file hedha min a.yml il application.yml sinon ma ya9rahich ken lema yabda keka application
